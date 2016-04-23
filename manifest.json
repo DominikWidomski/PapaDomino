@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+
+  "name": "PapaDominos",
+  "version": "0.1.0",
+  "description": "Uses browser voice synthesis API to synthesise Domino's Pizza Tracker's text messages.",
+
+  // NOT ALLOWED WITH MANIFEST_VERSION OF 1 or up?!?!?!??!?!?!??!?!?!?!
+  //"background_page": "background.html",
+
+  "browser_action": {
+    "default_title" : "PapaDominos",
+    // "name": "Manipulate DOM",
+    // "icons": { "icon.png", "dd-logo.png"}, // should provide different sizes...
+    // "icons": { "16" : "16.png", "32" : "32.png" "48" : "48.png", "128" : "128.png" } etc
+    "default_icon": "icon.png",
+
+    "badge_text": "PapaDominos",
+
+    "default_popup": "popup.html"
+  },
+
+  "options_page": "options.html",
+
+  "content_scripts": [ {
+    "js": [ "jquery.min.js", "main.js" ],
+    "css": [ "main.css" ],
+    "matches": [
+      "https://www.dominos.co.uk/pizzatracker/*"
+    ]
+  }]
+}
